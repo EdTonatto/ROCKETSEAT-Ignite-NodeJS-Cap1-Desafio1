@@ -95,7 +95,6 @@ app.delete('/todos/:id', checksExistsUserAccount, checksExistsTodo, (request, re
 	const {user} = request
 
 	const todoIndex = user.todos.findIndex((todo) => todo.id === id)
-	console.log(todoIndex)
 
 	user.todos.splice(todoIndex, 1)
 	return response.status(204).send()
